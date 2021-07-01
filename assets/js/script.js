@@ -28,6 +28,7 @@ var colorChanger = function () {
 
   while (true) {
     if (body.style.backgroundColor !== color) {
+      body.style.transition = "all 2s";
       body.style.backgroundColor = color;
       break;
     } else {
