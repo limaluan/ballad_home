@@ -1,4 +1,6 @@
+/* Color Changer */
 var body = document.querySelector("body");
+const colorScheme = document.getElementById("scheme");
 var colorTable = [
   "rgb(255, 0, 0)",
   "rgb(255, 128, 0)",
@@ -14,12 +16,25 @@ var colorTable = [
   "rgb(255, 0, 128)",
   "rgb(255, 0, 64)",
 ];
+const blackWhiteTable = ["rgb(255,255,255)", "rgb(0,0,0)"];
+
+var random = 0; // É utilizado como parâmetro para as cores que irão aparecer na função randomizeColor !!
 
 // Randomize a selected color
 var randomizeColor = function () {
-  let random = (Math.random() * 12).toFixed();
-  console.log(`RANDOM DEBUG: ${random}`);
-  return colorTable[random];
+  if (colorScheme.value === "colored") {
+    random = (Math.random() * 12).toFixed();
+    console.log(`RANDOM DEBUG: ${random}`);
+    return colorTable[random];
+  } else {
+    if (random === 0) {
+      random++;
+      return blackWhiteTable[0];
+    } else {
+      random = 0;
+      return blackWhiteTable[1];
+    }
+  }
 };
 
 // Change the background color
@@ -39,3 +54,23 @@ var colorChanger = function () {
 
 body.style.backgroundColor = randomizeColor();
 setInterval(colorChanger, 3000);
+
+/* Changer Controller */
+const controllerMenu = document.getElementById("controllerMenu");
+const onMenu = document.querySelector(".onMenu");
+
+const openMenu = () => {
+  controllerMenu.style.backgroundColor = "rgba(0,0,0,0.8)";
+  controllerMenu.style.width = "50rem";
+  controllerMenu.style.transition = "all 1s";
+
+  onMenu.style.visibility = "initial"
+};
+
+const closeMenu = () => {
+  controllerMenu.style.backgroundColor = "initial";
+  controllerMenu.style.width = "20px";
+  controllerMenu.style.transition = "all 1s";
+
+  onMenu.style.visibility = "hidden";
+};
