@@ -24,6 +24,8 @@ html {
     visibility: hidden;
 }
 
-#scheme{
-    margin-top: 1.5rem;
+[id$=-menu]{
+    display: flex;
+    
+    margin-top: 1.8rem;
 }

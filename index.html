@@ -14,11 +14,24 @@
         <div class="onMenu">
             <h1>Menu</h1>
             <div id="scheme-menu">
+                <!--Scheme Color-->
                 <label for="scheme">Scheme Color</label>
                 <select id="scheme">
                     <option value="colored">Colored</option>
                     <option value="black">Black & White</option>
                 </select>
+            </div>
+
+            <!--Frequency Controller-->
+            <div id="frequency-menu">
+                <label for="frequency">Frequency</label>
+                <input id="frequency" type="range" value="3000" min="100" max="10000" oninput="setFrequency()"/>
+            </div>
+
+            <!--Transition Controller-->
+            <div id="transition-menu">
+                <label for="transition">Transition time</label>
+                <input type="range" id="transition" min="0" max="5">
             </div>
         </div>
     </div>

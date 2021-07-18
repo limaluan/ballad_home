@@ -1,7 +1,7 @@
 /* Color Changer */
 var body = document.querySelector("body");
-const colorScheme = document.getElementById("scheme");
-var colorTable = [
+const colorScheme = document.getElementById("scheme");  // ColorScheme Controller
+var colorTable = [  /* Colored ColorScheme */
   "rgb(255, 0, 0)",
   "rgb(255, 128, 0)",
   "rgb(255, 255, 0)",
@@ -16,7 +16,7 @@ var colorTable = [
   "rgb(255, 0, 128)",
   "rgb(255, 0, 64)",
 ];
-const blackWhiteTable = ["rgb(255,255,255)", "rgb(0,0,0)"];
+const blackWhiteTable = ["rgb(255,255,255)", "rgb(0,0,0)"]; // Black&White ColorScheme
 
 var random = 0; // É utilizado como parâmetro para as cores que irão aparecer na função randomizeColor !!
 
@@ -24,7 +24,7 @@ var random = 0; // É utilizado como parâmetro para as cores que irão aparecer
 var randomizeColor = function () {
   if (colorScheme.value === "colored") {
     random = (Math.random() * 12).toFixed();
-    console.log(`RANDOM DEBUG: ${random}`);
+    // console.log(`RANDOM DEBUG: ${random}`);
     return colorTable[random];
   } else {
     if (random === 0) {
@@ -36,14 +36,14 @@ var randomizeColor = function () {
     }
   }
 };
-
+body.style.backgroundColor = randomizeColor(); // Randomize background at first time
 // Change the background color
 var colorChanger = function () {
   let color = randomizeColor();
 
   while (true) {
     if (body.style.backgroundColor !== color) {
-      body.style.transition = "all 2s";
+      body.style.transition = `all ${document.getElementById("transition").value}s`;
       body.style.backgroundColor = color;
       break;
     } else {
@@ -52,8 +52,15 @@ var colorChanger = function () {
   }
 };
 
-body.style.backgroundColor = randomizeColor();
-setInterval(colorChanger, 3000);
+// Timer to switch background
+var timer = 3000;
+var interval = setInterval(colorChanger, timer);
+
+function setFrequency() {
+  timer = document.getElementById("frequency").value;
+  clearInterval(interval);
+  interval = setInterval(colorChanger, timer);
+};
 
 /* Changer Controller */
 const controllerMenu = document.getElementById("controllerMenu");
@@ -64,7 +71,7 @@ const openMenu = () => {
   controllerMenu.style.width = "50rem";
   controllerMenu.style.transition = "all 1s";
 
-  onMenu.style.visibility = "initial"
+  onMenu.style.visibility = "initial";
 };
 
 const closeMenu = () => {
