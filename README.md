@@ -8,7 +8,7 @@
 <h3><a href="https://limaluan.github.io/ballad_home/" target="_blank">Click here to see the page on your Browser!</a></h3>
 <br />
 
-## Don't be sad that you can't go ballad in these difficult pandemic times, do you know why? Why now the ballad can be AT YOUR HOME!.
+## Don't be sad that you can't go ballad in these difficult pandemic times, do you know why? Why now the ballad can be AT YOUR HOME!. :tada:
 
 <img src="https://github.com/limaluan/just_random_colors/blob/master/demo_imgs/random_colors.gif?raw=true" /><br />
 <br />
@@ -16,7 +16,6 @@
 ## You can open the menu and customize your how the colors will change by hovering on the side of the screen 🔧.
 
 <img src="https://github.com/limaluan/just_random_colors/blob/master/demo_imgs/scheme_menu.gif?raw=true">
-<br /> <br />
 
 <h2 align="center">Take care of yourself.<br />🏡#stayhome🏡</h2>
 <h2 align="center">Made with ❤️ by LimaLuan</h2>
