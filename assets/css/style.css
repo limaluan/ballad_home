@@ -4,6 +4,9 @@
 }
 
 html {
+    box-sizing: border-box;
+    
+    font-family: 'Bebas Neue', cursive;
     font-size: 62.5%;
 }
 
@@ -13,9 +16,6 @@ html {
 }
 
 .onMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 
     color: white;
@@ -24,8 +24,14 @@ html {
     visibility: hidden;
 }
 
-[id$=-menu]{
+[id$=-menu], .onMenu{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     
-    margin-top: 1.8rem;
+    padding-top: 1.8rem;
+}
+
+[id$=-menu]{
+    font-size: 1.8rem;
 }

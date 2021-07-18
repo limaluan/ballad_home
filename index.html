@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Random Colors</title>
+    <title>Ballad Home - #StayHome</title>
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/2402/2402384.png" type="image/PNG">
+    <!--CSS-->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!--font-family: 'Bebas Neue', cursive;-->
 </head>
 
 <body>
@@ -25,13 +32,16 @@
             <!--Frequency Controller-->
             <div id="frequency-menu">
                 <label for="frequency">Frequency</label>
-                <input id="frequency" type="range" value="3000" min="100" max="10000" oninput="setFrequency()"/>
+                <div>
+                    High <input id="frequency" type="range" value="3000" min="100" max="10000"
+                        oninput="setFrequency()" /> Low
+                </div>
             </div>
 
             <!--Transition Controller-->
             <div id="transition-menu">
-                <label for="transition">Transition time</label>
-                <input type="range" id="transition" min="0" max="5">
+                <label for="transition">Transition time [<span id="transition-time-ui"></span>]</label>
+                <input type="range" id="transition" min="0" max="5" oninput="setTransitionOnMenu()">
             </div>
         </div>
     </div>

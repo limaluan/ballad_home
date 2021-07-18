@@ -1,8 +1,6 @@
-/* Color Changer */
-var body = document.querySelector("body");
-const colorScheme = document.getElementById("scheme");  // ColorScheme Controller
-var colorTable = [  /* Colored ColorScheme */
-  "rgb(255, 0, 0)",
+/* Colors Schemes */
+var colorTable = [
+  /* Colored ColorScheme */ "rgb(255, 0, 0)",
   "rgb(255, 128, 0)",
   "rgb(255, 255, 0)",
   "rgb(128, 255, 0)",
@@ -16,12 +14,22 @@ var colorTable = [  /* Colored ColorScheme */
   "rgb(255, 0, 128)",
   "rgb(255, 0, 64)",
 ];
-const blackWhiteTable = ["rgb(255,255,255)", "rgb(0,0,0)"]; // Black&White ColorScheme
+const blackWhiteTable = [
+  // Black&White ColorScheme
+  "rgb(255,255,255)",
+  "rgb(0,0,0)",
+];
 
+/* Initial Config */
+var body = document.querySelector("body");
+const colorScheme = document.getElementById("scheme"); // ColorScheme Controller
 var random = 0; // É utilizado como parâmetro para as cores que irão aparecer na função randomizeColor !!
 
+body.style.backgroundColor = randomizeColor(); // Randomize background at first time
+document.getElementById("transition-time-ui").innerHTML = document.getElementById("transition").value; // Boot the initial value of Transition time ui
+
 // Randomize a selected color
-var randomizeColor = function () {
+function randomizeColor() {
   if (colorScheme.value === "colored") {
     random = (Math.random() * 12).toFixed();
     // console.log(`RANDOM DEBUG: ${random}`);
@@ -35,21 +43,29 @@ var randomizeColor = function () {
       return blackWhiteTable[1];
     }
   }
-};
-body.style.backgroundColor = randomizeColor(); // Randomize background at first time
+}
+
 // Change the background color
 var colorChanger = function () {
   let color = randomizeColor();
 
   while (true) {
     if (body.style.backgroundColor !== color) {
-      body.style.transition = `all ${document.getElementById("transition").value}s`;
+      body.style.transition = `all ${
+        document.getElementById("transition").value
+      }s`;
       body.style.backgroundColor = color;
       break;
     } else {
       color = randomizeColor();
     }
   }
+};
+
+/* Change time transition number on UI */
+const setTransitionOnMenu = () => {
+  document.getElementById("transition-time-ui").innerHTML =
+    document.getElementById("transition").value;
 };
 
 // Timer to switch background
@@ -60,7 +76,7 @@ function setFrequency() {
   timer = document.getElementById("frequency").value;
   clearInterval(interval);
   interval = setInterval(colorChanger, timer);
-};
+}
 
 /* Changer Controller */
 const controllerMenu = document.getElementById("controllerMenu");
