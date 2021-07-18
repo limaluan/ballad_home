@@ -5,7 +5,7 @@
 <p>⚠️ Attention! The use or visualization of colors changing suddenly can harm anyone suffering from epilepsy, if you suffer from epilepsy please avoid the demo images and use of the site.</p>
 <br />
 
-<h3><a href="https://limaluan.github.io/just_random_colors/" target="_blank">Click here to see the page on your Browser!</a></h3>
+<h3><a href="https://limaluan.github.io/ballad_home/" target="_blank">Click here to see the page on your Browser!</a></h3>
 <br />
 
 ## Don't be sad that you can't go ballad in these difficult pandemic times, do you know why? Why now the ballad can be AT YOUR HOME!.
@@ -16,7 +16,7 @@
 ## You can open the menu and customize your how the colors will change by hovering on the side of the screen 🔧.
 
 <img src="https://github.com/limaluan/just_random_colors/blob/master/demo_imgs/scheme_menu.gif?raw=true">
-<br /> <br /> <br />
+<br /> <br />
 
 <h2 align="center">Take care of yourself.<br />🏡#stayhome🏡</h2>
 <h2 align="center">Made with ❤️ by LimaLuan</h2>
